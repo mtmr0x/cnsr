@@ -1,4 +1,4 @@
-const attrToMask = [
+const whatToMask = [
   'cpf',
   'password',
   'postcode',
@@ -11,34 +11,31 @@ const attrToMask = [
   'taxDocument',
 ];
 
-function replacer(string) {
-  return string.replace(/./g, '*');
-}
+function masker(obj) {
+  const oldObj = obj;
+  const newObj = oldObj;
+  const objKeys = Object.keys(oldObj);
 
-function masker(obj, inRecursion) {
-  const oldObj = Object.freeze(obj || {});
-  const changableObj = Object.assign({}, oldObj);
-  const keyedObj = Object.keys(oldObj);
-
-  keyedObj
-    .filter(o => attrToMask.includes(o) && (typeof oldObj[o] === 'string' || typeof oldObj[o] === 'number'))
+  objKeys
+    .filter(o => whatToMask.includes(o) && (typeof oldObj[o] === 'number' || typeof oldObj[o] === 'string'))
     .map(o => {
-      changableObj[o] = replacer(changableObj[o].toString());
-      return false;
+      newObj[o] = newObj[o].toString().replace(/./g, '*');
+      return false
     });
 
-  keyedObj
+  objKeys
     .filter(o => typeof oldObj[o] === 'object')
-    .map(o => masker(oldObj[o], true));
+    .map(o => masker(newObj[o]));
 
-  return changableObj;
+  return newObj;
 }
 
 function cnsr(o) {
   // Assign a new object to prevent
   // side effects in your original data
-  const originalData = Object.freeze(o);
-  return masker(Object.assign({}, originalData));
+  const j = JSON.stringify(o);
+  return masker(JSON.parse(j));
 }
 
 module.exports = cnsr;
+
