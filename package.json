@@ -4,7 +4,7 @@
   "description": "Recursively masker for objects with sensitive data",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine"
   },
   "keywords": [
     "filter",
@@ -12,7 +12,9 @@
     "sensitive",
     "censoring"
   ],
-
   "author": "Matheus Marsiglio <@mtmr0x>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^2.6.0"
+  }
 }
