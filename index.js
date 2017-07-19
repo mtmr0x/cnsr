@@ -1,4 +1,4 @@
-function masker(obj, maskable) {
+function masker(obj, maskable = []) {
   const oldObj = obj;
   const newObj = oldObj;
   const objKeys = Object.keys(oldObj);
