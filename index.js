@@ -22,10 +22,10 @@ function masker(obj, maskable = []) {
   return newObj;
 }
 
-function cnsr(o, mask) {
+function cnsr(obj, mask) {
   // Assign a new object to prevent
   // side effects in your original data
-  const j = JSON.stringify(o);
+  const j = JSON.stringify(obj);
 
   // recreate a new object based in JSON
   // for avoiding side effects
