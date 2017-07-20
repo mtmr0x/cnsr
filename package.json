@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jasmine"
   },
+  "repository": "git://github.com/mtmr0x/cnsr",
   "keywords": [
     "filter",
     "logging",
