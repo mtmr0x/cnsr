@@ -1,10 +1,8 @@
 function masker(obj, maskable = []) {
-  const objKeys = Object.keys(obj);
-
   // iterate maskable objects for replacing
   // characters for * in case object key exists
   // in maskable array
-  objKeys.map(o => {
+  Object.keys(obj).map(o => {
     if (['string', 'number'].includes(typeof obj[o]) && maskable.includes(o))
       obj[o] = obj[o].toString().replace(/./g, '*');
     else if (typeof obj[o] === 'object')
