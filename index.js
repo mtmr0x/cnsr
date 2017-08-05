@@ -1,4 +1,4 @@
-function masker(obj, maskable = []) {
+function masker(obj, maskable) {
   // iterate maskable objects for replacing
   // characters for * in case object key exists
   // in maskable array

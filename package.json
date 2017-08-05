@@ -1,6 +1,6 @@
 {
   "name": "cnsr",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Recursively masker for objects with sensitive data",
   "main": "index.js",
   "scripts": {
