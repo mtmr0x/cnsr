@@ -5,7 +5,7 @@ function masker(obj, maskable) {
   Object.keys(obj).map(o => {
     if (['string', 'number'].includes(typeof obj[o]) && maskable.includes(o))
       obj[o] = obj[o].toString().replace(/./g, '*');
-    else if (typeof obj[o] === 'object')
+    else if (typeof obj[o] === 'object' && obj[o] !== null)
       masker(obj[o], maskable)
     return false
   });

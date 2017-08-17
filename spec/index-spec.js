@@ -10,6 +10,7 @@ describe('cnsr lib', () => {
   });
 
   it('is passing data and receiving masked data', () => {
-    expect(cnsr({ a: 1, b: { c: 2 }}, ['c']).toString()).toBe({ a: 1, b: { c: '*' } }.toString());
+    expect(cnsr({ a: 1, b: { c: 2, d: null }}, ['c']).toString()).toBe({ a: 1, b: { c: '*' } }.toString());
   });
 });
+
