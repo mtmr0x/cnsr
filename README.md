@@ -1,5 +1,7 @@
 # cnsr
 
+[![Build Status](https://semaphoreci.com/api/v1/matmarsiglio/cnsr/branches/master/badge.svg)](https://semaphoreci.com/matmarsiglio/cnsr)
+
 cnsr (pronunciation: _censor_) is a lightweight object masker for sensitive data written in functional approach with no side effects, no dependencies focused in NodeJS server logs data and fully configurable.
 
 ```javascript
